@@ -3,7 +3,10 @@
 % perform spectral analysis, and identify Periodic Micro Motions (PMM) features.
 
 % Process data in smaller chunks to avoid memory issues
-files = {'../data/drone_steady_0/master_0000_data.bin', '../data/drone_steady_0/slave1_0000_data.bin', '../data/drone_steady_0/slave2_0000_data.bin', '../data/drone_steady_0/slave3_0000_data.bin'};
+files = {'../data/drone_steady_0/master_0000_data.bin', 
+    '../data/drone_steady_0/slave1_0000_data.bin', 
+    '../data/drone_steady_0/slave2_0000_data.bin', 
+    '../data/drone_steady_0/slave3_0000_data.bin'};
 chunk_size = 1e6; % Number of samples to process at a time
 
 % Parameters
