@@ -241,3 +241,9 @@ cython_debug/
 
 # Adding data to not go through all of that indexing
 data/
+
+/matlab/A_chunked.mat
+/matlab/debug.mat
+/matlab/output2.csv
+/matlab/output_chunked.csv
+/matlab/readDCA1000_16.asv

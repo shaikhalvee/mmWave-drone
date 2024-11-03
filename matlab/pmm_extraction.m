@@ -7,7 +7,7 @@ files = {'../data/drone_steady_0/master_0000_data.bin',
     '../data/drone_steady_0/slave1_0000_data.bin', 
     '../data/drone_steady_0/slave2_0000_data.bin', 
     '../data/drone_steady_0/slave3_0000_data.bin'};
-chunk_size = 1e6; % Number of samples to process at a time
+chunk_size = 1e5; % Number of samples to process at a time
 
 % Parameters
 adc_samples = 256; % Number of samples per chirp
@@ -30,7 +30,7 @@ for i = 1:length(files)
         radar_data_chunk = reshape(data_chunk(1:num_chirps*adc_samples), adc_samples, num_chirps);
         
         % FFT parameters
-        NFFT = 1024; % Number of FFT points
+        NFFT = 512; % Number of FFT points
         window = hamming(adc_samples);
         overlap = adc_samples / 2;
         
@@ -38,7 +38,7 @@ for i = 1:length(files)
         stft_data_chunk = stft(radar_data_chunk, 'Window', window, 'OverlapLength', overlap, 'FFTLength', NFFT, 'Centered', false);
         
         % Append STFT results
-        stft_results = [stft_results, stft_data_chunk];
+        stft_results = [stft_results, stft_data_chunk]; % problem with this line. not appending properly.
     end
     fclose(fid);
 end
