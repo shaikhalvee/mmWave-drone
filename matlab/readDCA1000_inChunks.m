@@ -33,7 +33,7 @@ function [retVal] = readDCA1000_inChunks(fileName)
 
         % Process complex data
         % Reshape and combine real and imaginary parts
-        adcData = reshape(adcData, numLanes*2, []);
+        adcDataChunk = reshape(adcDataChunk, numLanes*2, []);
         realPart = adcDataChunk(1:numLanes, :);
         imagPart = adcDataChunk(numLanes+1:end, :);
         adcDataChunk = realPart + sqrt(-1) * imagPart;

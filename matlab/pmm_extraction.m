@@ -38,7 +38,7 @@ for i = 1:length(files)
         stft_data_chunk = stft(radar_data_chunk, 'Window', window, 'OverlapLength', overlap, 'FFTLength', NFFT, 'Centered', false);
         
         % Append STFT results
-        stft_results = [stft_results, stft_data_chunk];
+        stft_results = [stft_results, stft_data_chunk]; % problem with this line. not appending properly.
     end
     fclose(fid);
 end
